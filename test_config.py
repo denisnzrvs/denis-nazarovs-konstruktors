@@ -79,7 +79,7 @@ print("----------------------------------------")
 # Checking if Twitter related options are present in the config file
 print("Checking if config has Twitter related options -->")
 assert config.has_option('twitter', 'consumer_key') == True
-assert config.has_option('twitter', 'consumer_key_secret') == True
+assert config.has_option('twitter', 'consumer_secret') == True
 assert config.has_option('twitter', 'access_token') == True
 assert config.has_option('twitter', 'access_token_secret') == True
 print("OK")
