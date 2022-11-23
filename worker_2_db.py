@@ -63,17 +63,20 @@ def push_asteroids_arrays_to_db(request_day, ast_array, hazardous):
 			logger.debug("Asteroid already IN DB")
 
 def sort_ast_by_pass_dist(ast_arr):
-	if len(ast_arr) > 0:
-		min_len = 1000000
-		max_len = -1
-		for val in ast_arr:
-			if len(val) > max_len:
-				max_len = len(val)
-			if len(val) < min_len:
-				min_len = len(val)
-		if min_len == max_len and min_len >= 10:
-			ast_arr.sort(key = lambda x: x[8], reverse=False)
-			return ast_arr
+	if isinstance(ast_arr, list):
+		if len(ast_arr) > 0:
+			min_len = 1000000
+			max_len = -1
+			for val in ast_arr:
+				if len(val) > max_len:
+					max_len = len(val)
+				if len(val) < min_len:
+					min_len = len(val)
+			if min_len == max_len and min_len >= 10:
+				ast_arr.sort(key = lambda x: x[8], reverse=False)
+				return ast_arr
+			else:
+				return []
 		else:
 			return []
 	else:
