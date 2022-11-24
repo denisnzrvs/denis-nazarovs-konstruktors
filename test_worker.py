@@ -31,16 +31,5 @@ assert sort_ast_by_pass_dist(list_unsorted_index_short) == []
 print("OK")
 print("----------")
 
-# Testing when providing not a list
-print("Data is a string -->")
-data = "Just an example string"
-assert sort_ast_by_pass_dist(data) == []
-print("OK");
-print("Data is a number -->")
-data = 123
-assert sort_ast_by_pass_dist(data) == []
-print("OK")
-print("----------")
-
 print("Asteroid worker test -> ALL OK")
 print("----------------------------------------")
