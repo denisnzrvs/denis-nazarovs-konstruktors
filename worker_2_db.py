@@ -249,5 +249,7 @@ if __name__ == "__main__":
 		print(ast_safe)
 		push_asteroids_arrays_to_db(request_date, ast_hazardous, 1)
 		push_asteroids_arrays_to_db(request_date, ast_safe, 0)
+		print("Today, there are "+str(len(ast_hazardous))+" hazardous asteroids and "+str(len(ast_safe))+" safe asteroids passing by.")
+		logger.info("Today, there are "+str(len(ast_hazardous))+" hazardous asteroids and "+str(len(ast_safe))+" safe asteroids passing by.")
 	else:
 		logger.error("Unable to get response from API. Response code: " + str(r.status_code) + " | content: " + str(r.text))
